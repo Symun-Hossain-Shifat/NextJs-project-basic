@@ -4,7 +4,7 @@ import PostData from "../Components/PostData";
 async  function PostPage  () {
     const res = await fetch('https://jsonplaceholder.typicode.com/users');
     const datas = await res.json();
-    // console.log(Datas)
+    console.log(datas)
   return (
     <div> 
         <p className="font-extrabold text-3xl">Post :  </p> 
