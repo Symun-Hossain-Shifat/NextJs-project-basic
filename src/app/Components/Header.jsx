@@ -6,7 +6,7 @@ function HeaderPage
 
  const Navitem =    <>
                     <li><Link href='/'>Home</Link></li>
-                    <li><Link href='/'>Post</Link></li>
+                    <li><Link href='/Post'>Post</Link></li>
                     <li><Link href='/'>Blog</Link></li>
                     <li><Link href='/'>Products</Link></li>
 
