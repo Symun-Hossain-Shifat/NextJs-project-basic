@@ -4,7 +4,7 @@ import {Envelope} from "@gravity-ui/icons";
 import {Button, Input, Label, Modal, Surface, TextField} from "@heroui/react";
 import {Description, ListBox, Select} from "@heroui/react";
 
-export function FormPage () {
+export function FormPage ({FormDataPage}) {
   return (
     <Modal variant="ghost" >
       <Button variant="secondary">Add New Task</Button>
@@ -21,27 +21,27 @@ export function FormPage () {
             </Modal.Header>
             <Modal.Body className="p-6">
               <Surface variant="default">
-                <form className="flex flex-col gap-4">
-                  <TextField className="w-full" name="name" type="text">
+                <form action={FormDataPage} className="flex flex-col gap-4">
+                  <TextField className="w-full" >
                     <Label>Task Name</Label>
-                    <Input placeholder="Enter your Tasks" />
+                    <Input name="name" type="text" placeholder="Enter your Tasks" />
                   </TextField>
-                  <TextField className="w-full" name="email" type="email">
+                  <TextField className="w-full">
                     <Label> User Email</Label>
-                    <Input placeholder="Enter your email" />
+                    <Input  name="email" type="email" placeholder="Enter your email" />
                   </TextField>
-                  <TextField className="w-full" name="text" type="tel">
+                  <TextField className="w-full" >
                     <Label>Website</Label>
-                    <Input placeholder="Enter your Website" />
+                    <Input name="Website" type="text" placeholder="Enter your Website" />
                   </TextField>
-                  <Select className="w-[256px]" placeholder="Select one">
+                  <Select className="w-[256px]" placeholder="Select one" name="Priority">
       <Label>Priority</Label>
       <Select.Trigger>
         <Select.Value />
         <Select.Indicator />
       </Select.Trigger>
       <Select.Popover>
-        <ListBox className="text-black">
+        <ListBox className="text-black" >
           <ListBox.Item id="florida" textValue="Florida">
             High
             <ListBox.ItemIndicator />
@@ -64,7 +64,7 @@ export function FormPage () {
               <Button slot="close" variant="secondary">
                 Cancel
               </Button>
-              <Button slot="close">Add Task</Button>
+              <Button slot="close" type="submit">Add Task</Button>
             </Modal.Footer>
                 </form>
               </Surface>
